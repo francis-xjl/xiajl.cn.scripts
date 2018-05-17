@@ -32,8 +32,8 @@ def backup_file():
     备份图片文件
     :return:
     """
-    filename = BACK_UP_ROOT + "file_" + str(time.strftime("%Y%m%d%H%M%S")) + ".gz"
-    r = requests.get(BACK_UP_SITE + '/solo.latest.gz', stream=True)
+    filename = BACK_UP_ROOT + "file_" + str(time.strftime("%Y%m%d%H%M%S")) + ".tar.gz"
+    r = requests.get(BACK_UP_SITE + '/xiajl.cn.tar.gz', stream=True)
     with open(filename, 'wb') as fd:
         for chunk in r.iter_content():
             fd.write(chunk)

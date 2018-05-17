@@ -1,6 +1,7 @@
 #!/bin/bash
 backdate=`date +%Y%m%d%H%M%S`
 backpath=/backup/xiajl.cn/
+filepath=/data/xiajl.cn/
 backdb=(solo)
 
 #mkdir directory
@@ -22,7 +23,7 @@ done
 # 备份图片等上传的资源
 rm -rf $backpath"xiajl.cn.tar.gz"
 cd $backpath
-tar -czf xiajl.cn.tar.gz $backpath
+tar -czf xiajl.cn.tar.gz $filepath
 
 #clear 30 days ago
 find $backpath -mtime +30 -exec rm -rf {} \;
